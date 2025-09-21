@@ -3,25 +3,21 @@ export default function Statistique() {
     {
       value: "70%",
       label: "Frais couverts",
-      className: "frais",
       color: "#e68900",
     },
     {
       value: "150",
       label: "Bourses disponibles",
-      className: "bourses",
       color: "#0000ff",
     },
     {
       value: "6",
       label: "Mois de formation",
-      className: "formation",
       color: "#000000",
     },
     {
       value: "+2000",
       label: "Diplômés",
-      className: "diplomes",
       color: "green",
     },
   ];
@@ -35,7 +31,7 @@ export default function Statistique() {
               key={index}
               className="col-12 col-md-3 p-2 rounded-4 mb-2 mb-md-0"
             >
-              <div className={`statistique-item text-center ${stat.className}`}>
+              <div className={`statistique-item text-center`}>
                 <h2 className="fw-bold" style={{ color: stat.color }}>
                   {stat.value}
                 </h2>
