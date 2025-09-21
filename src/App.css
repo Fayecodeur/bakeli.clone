@@ -253,9 +253,8 @@ body{
 .statistiques .frais h2 {
     color: var(--orange-dark);
 } 
-.statistiques .bourses h2 {
-   color: blue;
-}
+
+
 
 /* Formations */
 .formations {
