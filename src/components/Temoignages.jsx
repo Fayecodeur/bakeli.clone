@@ -64,39 +64,32 @@ export default function Temoignages() {
           data-bs-ride="carousel"
         >
           <div className="carousel-inner">
-            {slides.map((slide, slideIndex) => (
+            {temoignages.map((temoignage, index) => (
               <div
-                key={slideIndex}
-                className={`carousel-item ${slideIndex === 0 ? "active" : ""}`}
+                key={index}
+                className={`carousel-item ${index === 0 ? "active" : ""}`}
               >
                 <div className="row justify-content-center">
-                  {slide.map((temoignage, index) => (
-                    <div key={index} className="col-12 col-md-4 mb-3">
-                      <div className="card h-100 p-2 border-0 rounded-4 shadow-sm">
-                        <div className="card-body d-flex flex-column">
-                          <p className="card-text fs-6 mb-3">
-                            {temoignage.texte}
-                          </p>
-                          <hr
-                            className="my-4"
-                            style={{ borderColor: "#ccc" }}
+                  <div className="col-12 col-md-8 col-lg-6 mx-auto mb-3">
+                    <div className="card h-100 p-2 border-0 rounded-4 shadow-sm">
+                      <div className="card-body d-flex flex-column">
+                        <p className="card-text fs-6 mb-3">
+                          {temoignage.texte}
+                        </p>
+                        <hr className="my-4" style={{ borderColor: "#ccc" }} />
+                        <div className="d-flex justify-content-between align-items-center mt-auto">
+                          <strong className="mb-0">{temoignage.auteur}</strong>
+                          <img
+                            src={temoignage.avatar}
+                            alt="avatar"
+                            className="rounded-circle"
+                            width="50"
+                            height="50"
                           />
-                          <div className="d-flex justify-content-between align-items-center mt-auto">
-                            <strong className="mb-0">
-                              {temoignage.auteur}
-                            </strong>
-                            <img
-                              src={temoignage.avatar}
-                              alt="avatar"
-                              className="rounded-circle"
-                              width="50"
-                              height="50"
-                            />
-                          </div>
                         </div>
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
               </div>
             ))}
