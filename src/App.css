@@ -1,0 +1,491 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ====== Déclaration des couleurs globales ====== */
+:root {
+  --orange: #ff9800;
+  --orange-dark: #e68900;
+  --orange-light: #ffedd5;
+  --vert: #109183;
+  --warning:var(--orange);
+    
+  --primary: #1976d2;
+  --primary-dark: #125a9c;
+}
+
+/* ====== Container personnalisé ====== */
+.container {
+  max-width: 1300px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+.text-orange{
+  color: var(--orange-dark);
+}
+.bg-orange-light{
+  background-color: var(--orange-light);
+}
+
+/* ====== Bouton Warning ====== */
+.btn-warning {
+  background-color: var(--orange) !important;
+  border-color: var(--orange) !important;
+  color: #fff !important;
+}
+
+.btn-outline-warning  {
+  background-color: transparent !important;
+  border-color: var(--orange) !important;
+  color: var(--orange) !important;
+}
+.btn-outline-warning:hover {
+  background-color: var(--orange) !important;
+  border-color: var(--orange) !important;
+  color: #fff !important;
+}
+
+
+.btn-warning:hover {
+  background-color: var(--orange-dark) !important;
+  border-color: var(--orange-dark) !important;
+}
+
+/* ====== Bouton Primary ====== */
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+/* ====== Navbar ====== */
+
+/* Style de base des liens nav */
+.navbar-nav .nav-link {
+  position: relative;
+  color: #333 !important; /* couleur par défaut */
+  transition: color 0.3s ease;
+}
+
+
+
+/* Soulignement animé au hover */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 3px; 
+  width: 0;
+  height: 3px;
+  background-color: var(--orange); 
+  transition: width 0.3s ease;
+}
+
+/* Effet hover : underline apparaît */
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Effet hover : texte reste normal */
+.navbar-nav .nav-link:hover {
+  color: #333 !important; 
+}
+
+/* Quand le lien est actif (cliqué) */
+.navbar-nav .nav-link.active {
+  color: #ff9800 !important; /* orange clair */
+  font-weight: 600;
+}
+
+/* Pas d'underline sur le lien actif */
+.navbar-nav .nav-link.active::after {
+  width: 0;
+}
+@media (max-width: 768px) {
+    /* Supprimer l'underline animé sur mobile */
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+
+    /* Les liens ne prennent plus toute la largeur */
+    .navbar-nav .nav-link {
+        display: inline-block;
+        width: auto;
+        text-align: center;
+        padding: 0.5rem 1rem;
+    }
+}
+
+
+/* Hero section */
+.offre {
+    display: flex;
+    align-items: center;     
+    justify-content: center;
+    background-color: #ffeed8;
+    color: #c2410c;;
+    text-align: center;
+    font-weight: 500;
+    width: 320px;
+    font-size: 15px;
+    height: 35px;
+    border-radius: 30px; 
+}
+
+body{
+    padding-top: 60px;
+}
+
+#acceuil p.description{
+    font-size: 16px;
+    margin-top: 20px;
+    color: #555;
+}
+#acceuil p.description span{
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.hero-image {
+  width: 100%;     
+  max-width: 400px; 
+  margin: 0 auto;   
+  position: relative;
+}
+
+.hero-image img {
+  border: 30px solid #ffffff;
+  border-radius: 20px;        
+  width: 100%;          
+  display: block;             
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+/* Mobile : pleine largeur */
+@media (max-width: 767.98px) {
+  .hero-image {
+    max-width: 100%;   /
+  }
+}
+
+
+
+
+
+/* Style commun aux icônes */
+.hero-image .icon {
+    position: absolute;
+    font-size: 19px;                      
+    border-radius: 50%;         
+    padding: 7px;
+    /* box-shadow: 0 4px 8px rgba(0,0,0,0.15); */
+}
+
+/* Position spécifique */
+.hero-image .code {
+    top: 1px;
+    right: -1px;
+    background: var(--orange);
+    color: white;
+    font-weight: 600;
+    border-radius: 0 15px 0 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.hero-image .magic {
+    bottom: 2px;
+    left: 1px;
+    background: #00c48c;
+    color: white;
+    font-weight: 600;
+    border-radius: 0 15px 0 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.info {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    background: white;
+    padding: 5px 12px;  
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.point-vert {
+    width: 10px;
+    height: 10px;
+    background-color: #00c48c;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.statistique {
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+}
+
+
+/* Statistiques section */
+.statistique-item {
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+}
+
+.statistiques .frais h2 {
+      font-size: 30px;
+     font-weight: 700;
+}
+
+.statistiques .frais h2 {
+    color: var(--orange-dark);
+} 
+.statistiques .bourses h2 {
+   color: blue;
+}
+
+/* Formations */
+.formations {
+    background-color: #f9f9f9;
+}
+
+.etudiant_formes {
+  display: inline-block; /* pour que le background épouse juste le texte */
+  background: linear-gradient(to right, #d54e41, #109183); /* dégradé rouge → vert */
+  color: white; /* texte lisible */
+  font-size: 16px;
+  font-weight: 600;
+  padding: 3px 25px;
+  border-radius: 25px; 
+}
+.formations a {
+  display: inline-block;      
+  color: var(--orange-dark);    
+  text-decoration: none;       
+  font-weight: 700;             
+  background-color: var(--orange-light); 
+  color: var(--orange-dark);
+  padding: 9px 15px;            
+  border-radius: 20px; 
+  width: 130px;         
+  font-size: 14px;             
+}
+
+.formations a:hover {
+  color: white;
+  background: var(--orange-dark);            
+}
+
+.custom-card i{
+  padding: 15px;
+}
+.custom-card-annee i{
+  background-color: var(--orange-light);
+}
+
+.custom-card-etudiants i{
+  background-color: #e5f0fa;
+}
+
+.custom-card-coach i{
+  background-color: #ecfef1;
+  color: #7af89e;
+  font-size: 18px;
+}
+
+.custom-card-reussite i{
+  background-color: #ffc2c2;
+  color: #e75555 ;
+}
+
+/* Evenement */
+.evenement{
+  background-color: #f3f4f6;
+}
+
+
+.evenement .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px; /* arrondi si tu veux un look plus doux */
+  overflow: hidden; /* pour éviter que l'image dépasse */
+}
+
+.evenement .card-img-top {
+    width: 100%;
+    height: 180px;      
+    object-fit: cover; 
+    transition: transform 0.5s ease; 
+}
+
+
+.evenement .card img {
+  transition: transform 0.3s ease;
+}
+
+.evenement .card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.evenement .card:hover img {
+  transform: scale(1.05); 
+}
+
+/* Temoignages */
+.temoignages{
+  background-color: #f8fafc;
+}
+
+.cta{
+  background: linear-gradient(to right, #be0735, #da1243);
+}
+
+.cta_btn{
+  background-color: white;
+  color: #be0735;
+  font-weight: 600;
+  padding: 15px 20px;
+  border: none;
+}
+
+footer{
+  background-color: #f9fafb;
+}
+footer img {
+  height: 60px;
+  object-fit: cover;
+  display: block;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background-color: #1f2937; 
+    color: white; 
+    border-radius: 50%; 
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.social-icon:hover {
+    background-color: var(--orange); 
+    color: white; 
+
+}
+
+
+footer .link-hover {
+    color: black; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .link-hover:hover {
+    color: #00c48c;
+}
+
+footer input{
+  display: block;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  border: 1px solid rgb(221, 221, 221);
+  margin-bottom: 10px;
+  width: 100%;
+}
+footer input:focus{
+  border-color: #00c48c;
+}
+
+/* Cartes */
+#carouselTemoignages .card {
+    width: 22rem;
+    margin: 0 auto;
+}
+
+/* Boutons du carousel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background-color: white; 
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet survol */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #f0f0f0;
+}
+
+/* Décalage pour ne pas coller aux cartes (PC) */
+@media (min-width: 769px) {
+    .carousel-control-prev {
+        left: -30px;
+    }
+    .carousel-control-next {
+        right: -30px;
+    }
+}
+
+/* Décalage pour mobiles */
+@media (max-width: 768px) {
+    .carousel-control-prev {
+        left: -10px;
+    }
+    .carousel-control-next {
+        right: -10px;
+    }
+    #carouselTemoignages .card {
+        width: 18rem; 
+    }
+}
+
+/* Flèches gris simples */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none;
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid gray;
+    border-right: 3px solid gray;
+}
+
+.carousel-control-prev-icon {
+    transform: rotate(-135deg); /
+}
+
+.carousel-control-next-icon {
+    transform: rotate(45deg);
+}
